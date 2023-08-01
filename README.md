@@ -1,2 +1,1 @@
-# Trouble_Shooting
-trouble shootings for ubuntu
+# Archieve for ubuntu
