@@ -1,4 +1,9 @@
- tar xvzf cudnn-
+sudo sh -c "echo 'export PATH=$PATH:/usr/local/cuda-11.6/bin'>> /etc/profile"
+sudo sh -c "echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.6/lib64'>> /etc/profile"
+sudo sh -c "echo 'export CUDARDIR=/usr/local/cuda-11.6'>> /etc/profile"
+source /etc/profile
+
+tar xvzf cudnn-
 $ sudo cp cud/include/cudnn* /usr/local/cuda/include
 $ sudo cp cud/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
