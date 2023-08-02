@@ -1,3 +1,26 @@
 catkin: command not found
 
 >> sudo apt-get install python3-catkin-tools
+
+AttributeError: module 'numpy' has no attribute 'typeDict'
+
+>> pip3 install numpy==1.21
+
+$ gbus = tf.config.experimental.list_physical_devices('GPU')
+I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+
+>> 
+$ lspci | grep -i nvidia
+$ cd /sys/bus/pci/devices/
+$ ls
+$ cat /sys/bus/pci/devices/0000\:08\:00.0/numa_node
+-1
+$ cat /sys/bus/pci/devices/0000\:08\:00.1/numa_node
+-1
+
+>> $ echo 0 | sudo tee -a /sys/bus/pci/devices/0000\:08\:00.0/numa_node
+0
+$ echo 0 | sudo tee -a /sys/bus/pci/devices/0000\:08\:00.1/numa_node
+0
+
+  
