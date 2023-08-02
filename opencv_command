@@ -39,3 +39,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CUDA_ARCH_PTX=8.6 \
 -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so.8.5.0 \
 -D CUDNN_INCLUDE_DIR=/usr/local/cuda/include  ..
+
+
+time make -j$(nproc)
+sudo make install
+cat /etc/ld.so.conf.d/*
