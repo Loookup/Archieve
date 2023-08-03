@@ -33,3 +33,6 @@ from torch._C import * # noqa: F403 ImportError: libtinfo.so.5: cannot open shar
 ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
 
 >> pip install --upgrade pip
+
+sudo rm cuda
+sudo ln -s cuda-#.# cuda
