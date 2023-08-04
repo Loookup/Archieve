@@ -20,3 +20,7 @@ error: identifier "THCState" is undefined, error: identifier "state" is undefine
 Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
 https://stackoverflow.com/questions/38658014/ninja-not-found-by-cmake
 >> apt install ninja-build
+
+
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
