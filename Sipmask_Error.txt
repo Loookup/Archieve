@@ -1,7 +1,7 @@
 error: identifier "THCCeilDiv" is undefined
 
 https://github.com/pytorch/pytorch/issues/72807
->> at::ceil_div and ATen/ceil_div.h header
+>> at::ceil_div and #include <ATen/ceil_div.h header>
 
 error: identifier "THCudaCheck" is undefined
 https://github.com/pytorch/pytorch/pull/66391
@@ -9,4 +9,10 @@ https://github.com/pytorch/pytorch/pull/66391
 
 error: identifier "THCudaFree" is undefined, error: identifier "THCudaMalloc" is undefined
 https://www.exxactcorp.com/blog/Deep-Learning/pytorch-1-11-0-now-available
->> c10::cuda::CUDACachingAllocator::raw_alloc(size)/raw_delete(ptr)
+>> c10::cuda::CUDACachingAllocator::raw_alloc(size)/raw_delete(ptr) and add #include <ATen/cuda/ThrustAllocator.h>
+
+AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+>> CUDA_CHECK
+
+error: identifier "THCState" is undefined, error: identifier "state" is undefined
+>> Just Delete
