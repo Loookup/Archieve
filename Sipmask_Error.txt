@@ -24,3 +24,5 @@ https://stackoverflow.com/questions/38658014/ninja-not-found-by-cmake
 
 subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
 
+# pip module path
+export PATH=${HOME}/.local/bin:${PATH}
