@@ -16,3 +16,7 @@ AT_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
 
 error: identifier "THCState" is undefined, error: identifier "state" is undefined
 >> Just Delete
+
+Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
+https://stackoverflow.com/questions/38658014/ninja-not-found-by-cmake
+>> apt install ninja-build
