@@ -36,3 +36,9 @@ ERROR: Command errored out with exit status 1: python setup.py egg_info Check th
 
 sudo rm cuda
 sudo ln -s cuda-#.# cuda
+
+There are no x86_64-linux-gnu-g++ version bounds defined for CUDA version 11.6
+https://askubuntu.com/questions/1236188/error-unsupported-compiler-version-9-3-0-when-installing-cuda-on-20-04
+>> sudo ln -s /usr/bin/gcc-8 /usr/local/cuda-10.1/bin/gcc
+
+
