@@ -42,3 +42,6 @@ https://askubuntu.com/questions/1236188/error-unsupported-compiler-version-9-3-0
 >> sudo ln -s /usr/bin/gcc-8 /usr/local/cuda-10.1/bin/gcc
 
 
+AT_CHECK >> TORCH_CHECK
+.type().is_cuda() >> is_cuda()
+
