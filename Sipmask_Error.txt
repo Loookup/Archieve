@@ -21,6 +21,8 @@ Attempted to use ninja as the BuildExtension backend but we could not find ninja
 https://stackoverflow.com/questions/38658014/ninja-not-found-by-cmake
 >> apt install ninja-build
 
+AT_CHECK >> TORCH_CHECK
+.type().is_cuda() >> is_cuda()
 
 subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
 
