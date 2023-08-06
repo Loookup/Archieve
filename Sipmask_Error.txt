@@ -36,3 +36,7 @@ https://stackoverflow.com/questions/72988735/replacing-thc-thc-h-module-to-aten-
 >> #include <ATen/cuda/CUDAContext.h>
 
 
+ModuleNotFoundError: No module named 'mmcv.cnn.weight_init'
+>> delete weight_init
+
+
