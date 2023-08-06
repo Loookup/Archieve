@@ -26,3 +26,11 @@ subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit 
 
 # pip module path
 export PATH=${HOME}/.local/bin:${PATH}
+
+
+getCurrentCudastream
+https://stackoverflow.com/questions/72988735/replacing-thc-thc-h-module-to-aten-aten-h-module
+>> #include <ATen/cuda/CUDAEvent.h>
+>> #include <ATen/cuda/CUDAContext.h>
+
+
