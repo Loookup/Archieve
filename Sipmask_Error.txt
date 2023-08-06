@@ -1,7 +1,7 @@
 error: identifier "THCCeilDiv" is undefined
 
 https://github.com/pytorch/pytorch/issues/72807
->> at::ceil_div and #include <ATen/ceil_div.h header>
+>> at::ceil_div and #include <ATen/ceil_div.h> header
 
 error: identifier "THCudaCheck" is undefined
 https://github.com/pytorch/pytorch/pull/66391
