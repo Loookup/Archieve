@@ -45,3 +45,64 @@ https://askubuntu.com/questions/1236188/error-unsupported-compiler-version-9-3-0
 AT_CHECK >> TORCH_CHECK
 .type().is_cuda() >> is_cuda()
 
+  hull = ConvexHull(pts)
+  File "_qhull.pyx", line 2458, in scipy.spatial._qhull.ConvexHull.__init__
+  File "_qhull.pyx", line 353, in scipy.spatial._qhull._Qhull.__init__
+scipy.spatial._qhull.QhullError: QH6154 Qhull precision error: Initial simplex is flat (facet 1 is coplanar with the interior point)
+
+While executing:  | qhull i Qt
+Options selected for Qhull 2019.1.r 2019/06/21:
+  run-id 879533614  incidence  Qtriangulate  _pre-merge  _zero-centrum
+  _max-width 0.46  Error-roundoff 4.4e-15  _one-merge 3.1e-14
+  _near-inside 1.5e-13  Visible-distance 8.8e-15  U-max-coplanar 8.8e-15
+  Width-outside 1.8e-14  _wide-facet 5.3e-14  _maxoutside 3.5e-14
+
+The input to qhull appears to be less than 3 dimensional, or a
+computation has overflowed.
+
+Qhull could not construct a clearly convex simplex from points:
+- p20(v4):     3  -1.1  -1.1
+- p5(v3):     3 -0.73  -1.2
+- p47(v2):   3.2 -0.75 -0.93
+- p18(v1):     3  -1.1  -1.1
+
+The center point is coplanar with a facet, or a vertex is coplanar
+with a neighboring facet.  The maximum round off error for
+computing distances is 4.4e-15.  The center point, facets and distances
+to the center point are as follows:
+
+center point    3.028  -0.9243   -1.097
+
+facet p5 p47 p18 distance= -3.3e-16
+facet p20 p47 p18 distance= -2.2e-15
+facet p20 p5 p18 distance= -7.4e-14
+facet p20 p5 p47 distance=    0
+
+These points either have a maximum or minimum x-coordinate, or
+they maximize the determinant for k coordinates.  Trial points
+are first selected from points that maximize a coordinate.
+
+The min and max coordinates for each dimension are:
+  0:     2.968     3.185  difference= 0.217
+  1:     -1.16  -2.225e-308  difference= 1.16
+  2:    -1.188  -2.225e-308  difference= 1.188
+
+If the input should be full dimensional, you have several options that
+may determine an initial simplex:
+  - use 'QJ'  to joggle the input and make it full dimensional
+  - use 'QbB' to scale the points to the unit cube
+  - use 'QR0' to randomly rotate the input for different maximum points
+  - use 'Qs'  to search all points for the initial simplex
+  - use 'En'  to specify a maximum roundoff error less than 4.4e-15.
+  - trace execution with 'T3' to see the determinant for each point.
+
+If the input is lower dimensional:
+  - use 'QJ' to joggle the input and make it full dimensional
+  - use 'Qbk:0Bk:0' to delete coordinate k from the input.  You should
+    pick the coordinate with the least range.  The hull will have the
+    correct topology.
+  - determine the flat containing the points, rotate the points
+    into a coordinate plane, and delete the other coordinates.
+  - add one or more points to make the input full dimensional.
+
+>> convex_hull_3d(np.array(proj_points, dtype=np.float16))
