@@ -1,0 +1,13 @@
+1. https://github.com/UZ-SLAMLab/ORB_SLAM3/issues/566
+
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:375：CMakeFiles/ORB_SLAM3.dir/src/MLPnPsolver.cpp.o] Error 1
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:76：CMakeFiles/ORB_SLAM3.dir/src/Tracking.cc.o] Error 1
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:245：CMakeFiles/ORB_SLAM3.dir/src/Frame.cc.o] Error 1
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:102：CMakeFiles/ORB_SLAM3.dir/src/LoopClosing.cc.o] Error 1
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:323：CMakeFiles/ORB_SLAM3.dir/src/G2oTypes.cc.o] Error 1
+make[2]: *** [CMakeFiles/ORB_SLAM3.dir/build.make:232：CMakeFiles/ORB_SLAM3.dir/src/Optimizer.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:390：CMakeFiles/ORB_SLAM3.dir/all] Error 2
+make: *** [Makefile:84：all] Error 2
+
+
+Solution : The problem can be solved by add add_compile_options(-std=c++14) before CMakeLists.txt file.
