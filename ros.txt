@@ -10,7 +10,7 @@ ros-noetic-map-server ros-noetic-move-base \
 ros-noetic-urdf ros-noetic-xacro ros-noetic-usb-cam \
 ros-noetic-compressed-image-transport \
 ros-noetic-rqt-image-view ros-noetic-gmapping \
-ros-noetic-navigation ros-noetic-interactive-markers \
+ros-noetic-navigation ros-noetic-interactive-markers -y
 
 sudo apt install -y libasio-dev
 sudo apt install -y ros-$ROS_DISTRO-teleop-twist-keyboard
