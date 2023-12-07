@@ -1,21 +1,21 @@
-sudo sh -c "echo 'export PATH=$PATH:/usr/local/cuda-11.6/bin'>> /etc/profile"
-sudo sh -c "echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.6/lib64'>> /etc/profile"
-sudo sh -c "echo 'export CUDARDIR=/usr/local/cuda-11.6'>> /etc/profile"
+sudo sh -c "echo 'export PATH=$PATH:/usr/local/cuda-12.2/bin'>> /etc/profile"
+sudo sh -c "echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64'>> /etc/profile"
+sudo sh -c "echo 'export CUDARDIR=/usr/local/cuda-12.2'>> /etc/profile"
 export CUDA_HOME=/usr/local/cuda
 source /etc/profile
 
 tar -xvf cudnn-
-$ sudo cp cudnn-linux-x86_64-8.5.0.96_cuda11-archive/include/cudnn* /usr/local/cuda/include
-$ sudo cp cudnn-linux-x86_64-8.5.0.96_cuda11-archive/lib/libcudnn* /usr/local/cuda/lib64
+$ sudo cp cudnn-linux-x86_64-8.9.1.23_cuda12-archive/include/cudnn* /usr/local/cuda/include
+$ sudo cp cudnn-linux-x86_64-8.9.1.23_cuda12-archive/lib/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_adv_train.so.8.5.0 /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_adv_train.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8.5.0  /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8.5.0  /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8.5.0  /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_ops_train.so.8.5.0  /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_ops_train.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8.5.0 /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8
-sudo ln -sf /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn.so.8.5.0 /usr/local/cuda-11.6/targets/x86_64-linux/lib/libcudnn.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_adv_train.so.8.9.1 /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_adv_train.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8.9.1  /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8.9.1  /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8.9.1  /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_ops_train.so.8.9.1  /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_ops_train.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8.9.1 /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8
+sudo ln -sf /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn.so.8.9.1 /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudnn.so.8
 
 sudo ldconfig
 ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
