@@ -13,7 +13,7 @@ ros-noetic-rqt-image-view ros-noetic-gmapping \
 ros-noetic-navigation ros-noetic-interactive-markers -y
 
 sudo apt install -y libasio-dev
-sudo apt install -y ros-$ROS_DISTRO-teleop-twist-keyboard
+sudo apt-get install ros-noetic-teleop-twist-keyboard
 sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
 
 
