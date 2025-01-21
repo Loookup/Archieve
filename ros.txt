@@ -7,7 +7,7 @@ ros-noetic-rosserial-arduino ros-noetic-rosserial-python \
 ros-noetic-rosserial-server ros-noetic-rosserial-client \
 ros-noetic-rosserial-msgs ros-noetic-amcl \
 ros-noetic-map-server ros-noetic-move-base \
-ros-noetic-urdf ros-noetic-xacro ros-noetic-usb-cam \
+ros-noetic-urdf ros-noetic-xacro ros-noetic-serial \
 ros-noetic-compressed-image-transport \
 ros-noetic-rqt-image-view ros-noetic-gmapping \
 ros-noetic-navigation ros-noetic-interactive-markers -y
