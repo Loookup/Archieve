@@ -4,6 +4,12 @@ sudo sh -c "echo 'export CUDARDIR=/usr/local/cuda-11.8'>> /etc/profile"
 export CUDA_HOME=/usr/local/cuda
 source /etc/profile
 
+export PATH=/usr/local/cuda-11.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64:$LD_LIBRARY_PATH
+export CUDARDIR=/usr/local/cuda-11.1
+export CUDA_HOME=/usr/local/cuda-11.1
+
+
 tar -xvf cudnn-
 $ sudo cp cudnn-linux-x86_64-8.9.5.30_cuda11-archive/include/cudnn* /usr/local/cuda-11.8/include
 $ sudo cp cudnn-linux-x86_64-8.9.5.30_cuda11-archive/lib/libcudnn* /usr/local/cuda-11.8/lib64
