@@ -59,8 +59,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_DNN_CUDA=ON \
 -D CUDA_ARCH_BIN=8.6 \
 -D CUDA_ARCH_PTX=8.6 \
--D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so.8.9.5 \
--D CUDNN_INCLUDE_DIR=/usr/local/cuda/include  ..
+-D CUDNN_LIBRARY=/usr/local/cuda-11.8/lib64/libcudnn.so.8.9.5 \
+-D CUDNN_INCLUDE_DIR=/usr/local/cuda-11.8/include  ..
 
 
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
